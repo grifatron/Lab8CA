@@ -1,10 +1,11 @@
-module Lab8CA(clk, reset, RegWrite, PCSrc, ALUSrc, ALU_operation, write, MemtoReg);
+module Lab8CA(clk, reset, RegWrite, PCSrc, ALUSrc, ALU_operation, write, MemtoReg, register_write);
 
 input clk, reset, RegWrite, PCSrc, ALUSrc, write, MemtoReg;
 input [4:0] ALU_operation;
+output [31:0] register_write;
 
 wire [31:0] PC_out, PC_in, PC_add4, PC_addnum, imm_32, ROM_inst;
-wire [31:0] register_write, reg_out1, reg_out2, ALU_in2, ReadData, ALU_out;
+wire [31:0] reg_out1, reg_out2, ALU_in2, ReadData, ALU_out;
 wire [4:0] rs1, rs2, rd;
 wire [11:0] imm_12;
 wire [3:0] status;
